@@ -1,177 +1,71 @@
-Second-Hand Car Price Prediction
+# 🚗 Second-Hand Car Price Prediction
 
-This project is a machine learning web application that predicts the selling price of a used car based on vehicle details such as registration year, present price, kilometers driven, fuel type, seller type, transmission type, and number of previous owners.
+This project is a **Machine Learning web application** that predicts the **selling price of a used car** based on various vehicle attributes such as registration year, present price, kilometers driven, fuel type, seller type, transmission, and number of previous owners.
 
-The prediction model is built using Random Forest regression from scikit-learn. The trained model learns patterns from historical car sales data and estimates the expected resale value of a car.
+The model is trained using **Random Forest Regression** from the Scikit-learn library and deployed using a simple **Flask web application** where users can input car details and receive an estimated resale price.
 
-📊 Dataset
+---
 
-The dataset contains 301 car records with the following features:
+## 📊 Dataset
 
-Car_Name – model name of the car
+The dataset contains **301 car records** with the following features:
 
-Year – registration year
+- Car_Name – Model name of the car  
+- Year – Registration year  
+- Selling_Price – Current second-hand price *(target variable)*  
+- Present_Price – Original showroom price of the car  
+- Kms_Driven – Total kilometers driven  
+- Fuel_Type – Petrol / Diesel / CNG  
+- Seller_Type – Dealer or Individual  
+- Transmission – Manual or Automatic  
+- Owner – Number of previous owners  
 
-Selling_Price – current second-hand price (target variable)
+During preprocessing, the **car age** is calculated from the registration year, and categorical features are converted into numerical values using encoding.
 
-Present_Price – original showroom price of the car
+link : https://www.kaggle.com/datasets/bhavikjikadara/car-price-prediction-dataset
+---
 
-Kms_Driven – total kilometers driven
+## ⚙️ Machine Learning Workflow
 
-Fuel_Type – Petrol / Diesel / CNG
+1. Load and explore the dataset  
+2. Data preprocessing and cleaning  
+3. Feature engineering (calculate car age)  
+4. Encode categorical variables  
+5. Split data into training and testing sets  
+6. Train the Random Forest regression model  
+7. Evaluate model performance
 
-Seller_Type – Dealer or Individual
+The model achieves an **R² score of approximately 0.90–0.95**, indicating good prediction accuracy.
 
-Transmission – Manual or Automatic
+---
 
-Owner – number of previous owners
+## 🌐 Web Application
 
-During preprocessing, the car age feature is created from the registration year, and categorical variables are converted into numerical form using encoding techniques.
+A simple Flask-based web interface allows users to input:
 
-⚙️ Machine Learning Workflow
+- Registration year
+- Present price of the car
+- Kilometers driven
+- Fuel type
+- Seller type
+- Transmission
+- Number of owners
 
-Load and explore the dataset
+The system then predicts the **estimated second-hand selling price**.
 
-Clean and preprocess data
+---
 
-Feature engineering (calculate car age)
+## 🛠 Technologies Used
 
-Convert categorical features using encoding
+- Python  
+- Flask  
+- Pandas  
+- NumPy  
+- Scikit-learn  
+- HTML / CSS  
 
-Split dataset into training and testing sets
-
-Train a Random Forest regression model
-
-Evaluate model performance using the R² score
-
-The model typically achieves an R² score around 0.90–0.95, indicating good prediction accuracy.
-
-🌐 Web Application
-
-A simple Flask-based web interface allows users to enter car details such as:
-
-Registration year
-
-Present car price
-
-Kilometers driven
-
-Fuel type
-
-Seller type
-
-Transmission type
-
-Number of owners
-
-The application processes this input and predicts the estimated second-hand selling price of the car.
-
-🛠️ Technologies Used
-
-Python
-
-Flask
-
-Pandas
-
-NumPy
-
-Scikit-learn
-
-HTML / CSS
-
-This project demonstrates how machine learning can be applied to estimate vehicle resale prices based on real-world car attributes.
-
-read me file
-
-Here is a clean README.md file (under ~350 words) you can directly place in your GitHub repository.
-
-🚗 Second-Hand Car Price Prediction
-
-This project is a machine learning web application that predicts the selling price of a used car based on various vehicle features. The system analyzes historical car data and estimates the expected resale value of a vehicle.
-
-The prediction model is built using Random Forest regression from scikit-learn, and the model is integrated into a simple Flask web interface for user interaction.
-
-📊 Dataset
-
-The dataset contains 301 car records with the following features:
-
-Car_Name – Model name of the car
-
-Year – Registration year
-
-Selling_Price – Current second-hand price (target variable)
-
-Present_Price – Original showroom price
-
-Kms_Driven – Total kilometers driven
-
-Fuel_Type – Petrol / Diesel / CNG
-
-Seller_Type – Dealer or Individual
-
-Transmission – Manual or Automatic
-
-Owner – Number of previous owners
-
-During preprocessing, car age is calculated from the registration year, and categorical variables are converted to numerical values using encoding.
-
-⚙️ Machine Learning Workflow
-
-Load and explore the dataset
-
-Data preprocessing and cleaning
-
-Feature engineering (calculate car age)
-
-Encode categorical variables
-
-Split data into training and testing sets
-
-Train the Random Forest regression model
-
-Evaluate model performance
-
-The model achieves an R² score of approximately 0.90–0.95, indicating strong prediction accuracy.
-
-🌐 Web Application
-
-A Flask-based web interface allows users to enter car details such as:
-
-Registration year
-
-Present price of the car
-
-Kilometers driven
-
-Fuel type
-
-Seller type
-
-Transmission
-
-Number of owners
-
-The system then predicts the estimated second-hand selling price of the car.
-
-🛠 Technologies Used
-
-Python
-
-Flask
-
-Pandas
-
-NumPy
-
-Scikit-learn
-
-HTML / CSS
-
-🚀 How to Run
-pip install flask pandas scikit-learn numpy
-python app.py
-
-Open in browser:
-
-http://127.0.0.1:5000
+##How to Run the Project
+1) git clone 
+2) cd car-price-prediction
+3) pip install flask pandas numpy scikit-learn
+4) python app.py
