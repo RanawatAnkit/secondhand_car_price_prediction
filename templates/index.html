@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>Second Hand Car Price Prediction</h1>
+
+<form action="/predict" method="post">
+
+<label>Present Price (New Car Price in Lakh)</label>
+<input type="number" step="0.01" name="Present_Price" required>
+
+<label>Kilometers Driven</label>
+<input type="number" name="Kms_Driven" required>
+
+<label>Owner</label>
+<input type="number" name="Owner" required>
+
+<label>Registration Year</label>
+<input type="number" name="Year" min="1990" max="2026" required>
+
+<label>Fuel Type</label>
+<select name="Fuel_Type">
+<option value="Petrol">Petrol</option>
+<option value="Diesel">Diesel</option>
+<option value="CNG">CNG</option>
+</select>
+
+<label>Seller Type</label>
+<select name="Seller_Type">
+<option value="Dealer">Dealer</option>
+<option value="Individual">Individual</option>
+</select>
+
+<label>Transmission</label>
+<select name="Transmission">
+<option value="Manual">Manual</option>
+<option value="Automatic">Automatic</option>
+</select>
+
+<button type="submit">Predict Price</button>
+
+</form>
+
+<h2>{{ prediction_text }}</h2>
+
+</body>
+</html>
